@@ -97,49 +97,26 @@ restaurant_site/
 
 ## Running Locally
 
-Clone the repository:
+### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/SemenShchelkonogov/University-Project-Web-Module-Restaurant-Website.git
-cd University-Project-Web-Module-Restaurant-Website ```
+cd University-Project-Web-Module-Restaurant-Website
 
-Create virtual environment:
-```bash
+2️⃣ Create virtual environment
 python -m venv .venv
-source .venv/bin/activate ```
+source .venv/bin/activate
 
-Install dependencies:
-```bash
-pip install flask```
+3️⃣ Install dependencies
+pip install flask
 
-Run the application:
-```bash
-python app.py```
+4️⃣ Run the application
+python app.py
 
-Open in browser:
-```bash
-http://127.0.0.1:5000```
+5️⃣ Open in browser
+http://127.0.0.1:5000
 
---
 
-## Project Objective
 
-The primary objective of this project was to implement a structured backend-driven website using Flask and demonstrate practical understanding of:
-Web routing
-Template engines
-Frontend-backend integration
-Modular project organization
 
-The architecture allows further extension with:
-Database integration
-User authentication
-Admin panel
-CMS functionality
-
---
-
-## Team
-
-Semen Shchelkonogov — Backend architecture, routing, UI implementation
-Dias Yembergen — Frontend support & content structuring
 
