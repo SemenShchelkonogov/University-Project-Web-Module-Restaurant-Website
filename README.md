@@ -95,15 +95,6 @@ restaurant_site/
 
 --
 
-
-## Team
-
-Semen Shchelkonogov — Backend architecture, routing, UI implementation
-Dias Yembergen — Frontend support & content structuring
-
---
-
-
 ## Running Locally
 
 ```bash
