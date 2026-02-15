@@ -95,11 +95,19 @@ restaurant_site/
 
 --
 
+
+## Team
+
+Semen Shchelkonogov — Backend architecture, routing, UI implementation
+Dias Yembergen — Frontend support & content structuring
+
+--
+
+
 ## Running Locally
 
-### 1️⃣ Clone the repository
-
 ```bash
+1️⃣ Clone the repository
 git clone https://github.com/SemenShchelkonogov/University-Project-Web-Module-Restaurant-Website.git
 cd University-Project-Web-Module-Restaurant-Website
 
