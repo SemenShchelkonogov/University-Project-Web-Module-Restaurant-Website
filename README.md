@@ -93,8 +93,6 @@ restaurant_site/
 - CSS3
 - JavaScript
 
---
-
 ## Running Locally
 
 ```bash
