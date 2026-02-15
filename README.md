@@ -101,20 +101,24 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/SemenShchelkonogov/University-Project-Web-Module-Restaurant-Website.git
-cd University-Project-Web-Module-Restaurant-Website
+cd University-Project-Web-Module-Restaurant-Website ```
 
 Create virtual environment:
+```bash
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate ```
 
 Install dependencies:
-pip install flask
+```bash
+pip install flask```
 
 Run the application:
-python app.py
+```bash
+python app.py```
 
 Open in browser:
-http://127.0.0.1:5000
+```bash
+http://127.0.0.1:5000```
 
 --
 
