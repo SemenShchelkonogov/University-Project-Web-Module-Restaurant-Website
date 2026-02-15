@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% set title = t["menu_title"] %}
+
+{% block content %}
+<main class="menu-page">
+
+  <section class="menu-wrap">
+    <h1 class="menu-title">{{ t["menu_title"] }}</h1>
+
+    <div class="menu-grid">
+
+      <!-- LEFT: Signature Gallery -->
+      <aside class="menu-gallery" aria-label="Signature dishes gallery">
+        <div class="menu-gallery-head">
+          <h2 class="menu-section-title">{{ t["menu_signature"] }}</h2>
+          <div class="menu-mini-logo">MOSCOW</div>
+        </div>
+
+        <div class="menu-slider">
+          <button class="menu-arrow prev" type="button" aria-label="{{ t['menu_prev'] }}">&#10094;</button>
+
+          <div class="menu-slider-frame">
+            <img
+              id="menuHeroImage"
+              src="{{ url_for('static', filename='img/caviar.jpg') }}"
+              alt="{{ t['menu_signature_alt'] }}"
+            />
+          </div>
+
+          <button class="menu-arrow next" type="button" aria-label="{{ t['menu_next'] }}">&#10095;</button>
+        </div>
+
+        <div class="menu-slider-dots" id="menuDots"></div>
+
+        <p class="menu-gallery-note">
+          {{ t["menu_intro"] }}
+        </p>
+      </aside>
+
+      <!-- RIGHT: Menu List -->
+      <section class="menu-list" aria-label="Menu list">
+
+        <!-- CAVIAR -->
+        <div class="menu-category" id="caviar">
+          <h2 class="menu-category-title">{{ t["menu_caviar"] }}</h2>
+
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_cav_1"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€180</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_cav_2"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€120</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_cav_3"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€95</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_cav_4"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€18</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_cav_5"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€165</div></div>
+        </div>
+
+        <!-- STARTERS -->
+        <div class="menu-category" id="starters">
+          <h2 class="menu-category-title">{{ t["menu_starters"] }}</h2>
+
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_s_1"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€42</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_s_2"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€28</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_s_3"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€24</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_s_4"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€18</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_s_5"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€22</div></div>
+        </div>
+
+        <!-- MAIN COURSES -->
+        <div class="menu-category" id="main">
+          <h2 class="menu-category-title">{{ t["menu_mains"] }}</h2>
+
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_m_1"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€42</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_m_2"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€28</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_m_3"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€32</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_m_4"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€48</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_m_5"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€58</div></div>
+        </div>
+
+        <!-- DESSERT -->
+        <div class="menu-category" id="dessert">
+          <h2 class="menu-category-title">{{ t["menu_dessert"] }}</h2>
+
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_d_1"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€14</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_d_2"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€15</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_d_3"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€13</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_d_4"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€16</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_d_5"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€12</div></div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-category" id="drinks">
+          <h2 class="menu-category-title">{{ t["menu_wine_spirits"] }}</h2>
+
+          <h3 class="menu-subtitle">{{ t["menu_champagne"] }}</h3>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_ch_1"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€120</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_ch_2"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€145</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_ch_3"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€165</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_ch_4"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€390</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_ch_5"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€520</div></div>
+
+          <h3 class="menu-subtitle">{{ t["menu_white"] }}</h3>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_w_1"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€95</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_w_2"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€88</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_w_3"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€165</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_w_4"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€130</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_w_5"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€210</div></div>
+
+          <h3 class="menu-subtitle">{{ t["menu_red"] }}</h3>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_r_1"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€135</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_r_2"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€155</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_r_3"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€160</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_r_4"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€170</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_r_5"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€150</div></div>
+
+          <h3 class="menu-subtitle">{{ t["menu_vodka"] }}</h3>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_v_1"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€18</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_v_2"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€28</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_v_3"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€22</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_v_4"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€14</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_v_5"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€45</div></div>
+
+          <h3 class="menu-subtitle">{{ t["menu_cocktails"] }}</h3>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_c_1"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€20</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_c_2"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€22</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_c_3"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€24</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_c_4"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€26</div></div>
+          <div class="menu-item"><div class="menu-item-name">{{ t["m_c_5"] }}</div><div class="menu-item-line"></div><div class="menu-item-price">€25</div></div>
+
+        </div>
+
+      </section>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

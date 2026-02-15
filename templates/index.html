@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% set title = "Home" %}
+
+{% block content %}
+<main class="home">
+
+  <section class="hero"></section>
+
+  <section class="content" id="about">
+    <div class="content-inner about">
+
+      <h1 class="headline">{{ t["home_title"] }}</h1>
+
+      <h3 class="subheading">{{ t["home_philosophy_title"] }}</h3>
+      <p class="text">{{ t["home_philosophy_text"] }}</p>
+
+      <h3 class="subheading">{{ t["home_craft_title"] }}</h3>
+      <p class="text">{{ t["home_craft_text"] }}</p>
+
+      <div class="chef-block">
+        <div class="chef-text">
+          <h3 class="subheading">{{ t["home_chef_title"] }}</h3>
+          <p class="text">{{ t["home_chef_text"] }}</p>
+        </div>
+
+        <img src="{{ url_for('static', filename='img/chef.jpg') }}"
+             alt="Chef Aleksandr Morozov"
+             class="chef-photo">
+      </div>
+
+      <p class="text">{{ t["home_beyond_text"] }}</p>
+
+      <h3 class="subheading">{{ t["home_wine_title"] }}</h3>
+      <p class="text">{{ t["home_wine_text"] }}</p>
+
+      <h3 class="subheading">{{ t["home_details_title"] }}</h3>
+      <p class="text">{{ t["home_details_text"] }}</p>
+
+      <h3 class="subheading">{{ t["home_gallery_title"] }}</h3>
+
+      <div class="gallery">
+        <button class="gallery-btn prev" type="button">&#10094;</button>
+
+        <div class="gallery-frame">
+          <img id="galleryImage"
+               src="{{ url_for('static', filename='img/gallery1.png') }}"
+               alt="{{ t['home_gallery_alt'] }}">
+        </div>
+
+        <button class="gallery-btn next" type="button">&#10095;</button>
+      </div>
+
+      <div class="gallery-dots" id="galleryDots"></div>
+
+    </div>
+  </section>
+
+</main>
+{% endblock %}
+

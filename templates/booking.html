@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% set title = "Booking" %}
+
+{% block content %}
+<main class="booking-page">
+  <section class="booking-wrap">
+
+    <h1 class="booking-title">{{ t["booking_title"] }}</h1>
+    <p class="booking-subtitle">{{ t["booking_subtitle"] }}</p>
+
+    <div class="booking-grid">
+
+      <div class="booking-card">
+        <form id="bookingForm" class="booking-form" autocomplete="on">
+
+          <div class="booking-row">
+            <label class="booking-label" for="fullName">{{ t["booking_full_name"] }}</label>
+            <input class="booking-input" id="fullName" name="fullName" type="text"
+                   placeholder="{{ t['booking_full_name_ph'] }}" required>
+          </div>
+
+          <div class="booking-row two">
+            <div>
+              <label class="booking-label" for="email">{{ t["booking_email"] }}</label>
+              <input class="booking-input" id="email" name="email" type="email"
+                     placeholder="{{ t['booking_email_ph'] }}" required>
+            </div>
+
+            <div>
+              <label class="booking-label" for="phone">{{ t["booking_phone"] }}</label>
+              <input class="booking-input" id="phone" name="phone" type="tel"
+                     placeholder="{{ t['booking_phone_ph'] }}" required>
+            </div>
+          </div>
+
+          <div class="booking-row two">
+            <div>
+              <label class="booking-label" for="date">{{ t["booking_date"] }}</label>
+              <input class="booking-input" id="date" name="date" type="date" required>
+            </div>
+
+            <div>
+              <label class="booking-label" for="time">{{ t["booking_time"] }}</label>
+              <select class="booking-input" id="time" name="time" required>
+                <option value="" selected disabled>{{ t["booking_time_placeholder"] }}</option>
+                <option>18:30</option>
+                <option>19:00</option>
+                <option>19:30</option>
+                <option>20:00</option>
+                <option>20:30</option>
+                <option>21:00</option>
+                <option>21:30</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="booking-row two">
+            <div>
+              <label class="booking-label" for="guests">{{ t["booking_guests"] }}</label>
+              <select class="booking-input" id="guests" name="guests" required>
+                <option value="" selected disabled>{{ t["booking_guests_placeholder"] }}</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="booking-label" for="occasion">{{ t["booking_occasion"] }}</label>
+              <input class="booking-input" id="occasion" name="occasion" type="text"
+                     placeholder="{{ t['booking_occasion_ph'] }}">
+            </div>
+          </div>
+
+          <div class="booking-row">
+            <label class="booking-label" for="requests">{{ t["booking_requests"] }}</label>
+            <textarea class="booking-input booking-textarea" id="requests" name="requests" rows="4"
+                      placeholder="{{ t['booking_requests_ph'] }}"></textarea>
+          </div>
+
+          <div class="booking-options">
+            <label class="booking-check">
+              <input type="checkbox" name="caviar">
+              <span>{{ t["booking_opt_caviar"] }}</span>
+            </label>
+
+            <label class="booking-check">
+              <input type="checkbox" name="champagne">
+              <span>{{ t["booking_opt_champagne"] }}</span>
+            </label>
+
+            <label class="booking-check">
+              <input type="checkbox" name="privateDining">
+              <span>{{ t["booking_opt_private"] }}</span>
+            </label>
+          </div>
+
+          <div class="booking-note">{{ t["booking_note"] }}</div>
+
+          <button class="booking-btn" type="submit">{{ t["booking_submit"] }}</button>
+
+          <div id="bookingSuccess" class="booking-success" role="status" aria-live="polite">
+            {{ t["booking_success"] }}
+          </div>
+
+        </form>
+      </div>
+
+      <div class="booking-side">
+        <div class="booking-photo" aria-hidden="true"></div>
+        <div class="booking-side-text">
+          <div class="booking-side-title">{{ t["booking_side_title"] }}</div>
+          <div class="booking-side-sub">{{ t["booking_side_sub"] }}</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+{% endblock %}

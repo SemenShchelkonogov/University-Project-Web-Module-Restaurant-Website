@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% set title = t["news_title"] %}
+
+{% block content %}
+<main class="page">
+  <div class="news-wrap">
+
+    <h1 class="headline">{{ t["news_title"] }}</h1>
+
+    <!-- NEWS ITEM 1 -->
+    <div class="news-card">
+      <div class="news-content">
+        <div class="news-date">{{ t["news_1_date"] }}</div>
+        <h2 class="news-title">{{ t["news_1_title"] }}</h2>
+        <p class="text">{{ t["news_1_text"] }}</p>
+      </div>
+
+      <div class="news-image">
+        <img src="{{ url_for('static', filename='img/michelin.jpg') }}" alt="{{ t['news_1_alt'] }}">
+      </div>
+    </div>
+
+    <!-- NEWS ITEM 2 -->
+    <div class="news-card">
+      <div class="news-content">
+        <div class="news-date">{{ t["news_2_date"] }}</div>
+        <h2 class="news-title">{{ t["news_2_title"] }}</h2>
+        <p class="text">{{ t["news_2_text"] }}</p>
+      </div>
+
+      <div class="news-image">
+        <img src="{{ url_for('static', filename='img/terrace.jpg') }}" alt="{{ t['news_2_alt'] }}">
+      </div>
+    </div>
+
+    <!-- NEWS ITEM 3 -->
+    <div class="news-card">
+      <div class="news-content">
+        <div class="news-date">{{ t["news_3_date"] }}</div>
+        <h2 class="news-title">{{ t["news_3_title"] }}</h2>
+        <p class="text">{{ t["news_3_text"] }}</p>
+      </div>
+
+      <div class="news-image">
+        <img src="{{ url_for('static', filename='img/promo.jpg') }}" alt="{{ t['news_3_alt'] }}">
+      </div>
+    </div>
+
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="{{ lang if lang else 'en' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title if title else "Restaurant" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+
+        <!-- LEFT: logo + buttons -->
+        <div class="header-left">
+          <!-- Logo -->
+          <a class="brand" href="/" aria-label="Home">
+            <img
+              class="brand-logo"
+              src="{{ url_for('static', filename='img/restaurant_logo.png') }}"
+              alt="Restaurant logo"
+            />
+          </a>
+
+          <!-- Buttons right after logo -->
+          <nav class="top-links" aria-label="Primary links">
+            <a class="top-link" href="/#about">{{ t["home_about"] }}</a>
+            <a class="top-link" href="/#contacts">{{ t["home_contacts"] }}</a>
+            <a class="top-link top-link--cta" href="/booking">{{ t["home_booking"] }}</a>
+          </nav>
+        </div>
+
+        <!-- RIGHT: burger -->
+        <button
+          class="burger"
+          id="burgerBtn"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Dropdown menu -->
+        <nav class="dropdown" id="dropdownMenu" aria-label="Main menu">
+
+          <a href="/menu">{{ t["nav_menu"] }}</a>
+          <a href="/rules">{{ t["nav_rules"] }}</a>
+          <a href="/news">{{ t["nav_news"] }}</a>
+
+          <!-- Language submenu -->
+          <div class="dropdown-sub">
+            <button
+              class="dropdown-sub-btn"
+              id="langBtn"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              {{ t["nav_language"] }}
+              <span class="dropdown-sub-caret">▾</span>
+            </button>
+
+            <div class="dropdown-sub-menu" role="menu" aria-label="Language menu">
+              <a href="/set-lang/en" role="menuitem">English</a>
+              <a href="/set-lang/fr" role="menuitem">Français</a>
+            </div>
+          </div>
+
+        </nav>
+
+      </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacts">
+      <div class="footer-inner footer-single">
+
+        <div class="footer-col">
+          <h4 class="footer-title">{{ t["footer_contacts"] }}</h4>
+
+          <p class="footer-text">
+            Moscow Restaurant is located in the heart of Paris, offering an exclusive
+            fine-dining experience in an elegant and intimate setting.
+          </p>
+
+          <p class="footer-text">
+            18 Rue de Rivoli, 75004 Paris, France
+          </p>
+
+          <p class="footer-text">
+            For reservations and private events inquiries:
+          </p>
+
+          <p class="footer-text">
+            Email: info@moscowrestaurant.com
+          </p>
+
+          <p class="footer-text">
+            Phone: +33 6 12 34 56 78
+          </p>
+
+          <p class="footer-text">
+            We look forward to welcoming you for an unforgettable culinary journey.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Moscow Restaurant</span>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <script>
+      // Burger menu open/close
+      const burgerBtn = document.getElementById("burgerBtn");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      function closeMenu() {
+        dropdownMenu.classList.remove("open");
+        burgerBtn.setAttribute("aria-expanded", "false");
+      }
+
+      burgerBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle("open");
+        burgerBtn.setAttribute(
+          "aria-expanded",
+          dropdownMenu.classList.contains("open") ? "true" : "false"
+        );
+      });
+
+      document.addEventListener("click", () => closeMenu());
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+
+      // Close menu when click on normal link
+      dropdownMenu.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") closeMenu();
+      });
+
+      // Language submenu (works on mobile by click)
+      const sub = document.querySelector(".dropdown-sub");
+      const langBtn = document.getElementById("langBtn");
+
+      if (sub && langBtn) {
+        langBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          sub.classList.toggle("open");
+          const expanded = sub.classList.contains("open");
+          langBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
+        });
+
+        document.addEventListener("click", () => {
+          sub.classList.remove("open");
+          langBtn.setAttribute("aria-expanded", "false");
+        });
+      }
+    </script>
+
+  </body>
+</html>
